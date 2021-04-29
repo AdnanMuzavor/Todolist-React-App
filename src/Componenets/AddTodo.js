@@ -2,7 +2,7 @@ import React from "react";
 import './container.css';
 import {useState} from 'react';
 
-export const AddTodo = (props) => {
+export const AddTodo = ({addTodo}) => {
     const [title,settitle]= useState("");
     const [description,setdescription]= useState("");
 
@@ -11,7 +11,7 @@ export const AddTodo = (props) => {
         if(!title||!description){
             alert("Title or Description cannotb be blank");
         }
-        props.addTodo(title,description);
+        addTodo(title,description);
     }
   return (
     <div className="Container my-3">
@@ -19,7 +19,7 @@ export const AddTodo = (props) => {
       <div>
         <form className="my-3" onSubmit={submit}>
           <div className="mb-3">
-            <label for="exampleInputEmail1" className="form-label">
+            <label htmlFor="exampleInputEmail1" className="form-label">
               Todo Title
             </label>
             <input
@@ -35,7 +35,7 @@ export const AddTodo = (props) => {
             </div>
           </div>
           <div className="mb-3">
-            <label for="exampleInputPassword1" className="form-label">
+            <label htmlFor="exampleInputPassword1" className="form-label">
               Todo description
             </label>
             <input
@@ -52,7 +52,7 @@ export const AddTodo = (props) => {
               className="form-check-input"
               id="exampleCheck1"
             />
-            <label className="form-check-label" for="exampleCheck1">
+            <label className="form-check-label" htmlFor="exampleCheck1">
               Check me out
             </label>
           </div>

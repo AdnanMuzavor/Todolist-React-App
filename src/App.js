@@ -13,6 +13,10 @@ function App() {
   }
 
 
+  const addTodo=(title,description)=>{
+    console.log("I am adding this todo",title,description);
+  }
+
   const [todos,settodos]= useState(
  [
   { sno:1,
@@ -37,7 +41,9 @@ function App() {
     <>
     <Header/>
     <hr></hr>
-    <AddTodo/>
+    
+    <AddTodo addTodo={addTodo}/>
+    
     <h1 className="text-center">Todos List</h1>
     <Todos1 todos={todos} ondelete={ondelete}/>
     <Footer/>
