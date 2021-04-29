@@ -13,17 +13,25 @@ function App() {
   }
 
 
-  const addTodo=(title,description)=>{
-    
-    let sno = todos[todos.length-1].sno +1;
+const addTodo=(title,description)=>{
+   
+if(todos.length===0){
+todos.sno=0;
+}
+else{
+  todos.sno = todos[todos.length-1].sno +1;
+  }
+  
     const myTodo={
-      sno: sno,
+     sno: todos.sno,
       title: title,
       description: description
     }
+ 
     settodos([...todos,myTodo]);
     console.log("mytodos:",myTodo);
-    console.log("sno is:",sno);
+ 
+    console.log("sno is:",todos.sno);
   }
 
   const [todos,settodos]= useState(
