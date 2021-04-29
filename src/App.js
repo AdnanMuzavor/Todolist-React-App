@@ -8,13 +8,22 @@ function App() {
   const ondelete=(todo)=>{
     console.log("On delete activated",todo);
     settodos(todos.filter((e)=>{
-      return e!=todo;
+      return e!==todo;
     }))
   }
 
 
   const addTodo=(title,description)=>{
-    console.log("I am adding this todo",title,description);
+    
+    let sno = todos[todos.length-1].sno +1;
+    const myTodo={
+      sno: sno,
+      title: title,
+      description: description
+    }
+    settodos([...todos,myTodo]);
+    console.log("mytodos:",myTodo);
+    console.log("sno is:",sno);
   }
 
   const [todos,settodos]= useState(

@@ -1,5 +1,5 @@
 import React from 'react';
-import reactDom from 'react-dom';
+
 export default function Footer(){
 let footerstyle={
     backgroundcolor: "rebeccapurple",
