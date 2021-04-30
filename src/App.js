@@ -5,12 +5,21 @@ import {Todos1} from './Componenets/Todos1';
 import React,{useState} from 'react';
 import {AddTodo} from './Componenets/AddTodo';
 function App() {
+  let initTodo;
+  if(localStorage.getItem("todos")===null){
+    initTodo=[];
+  }
+else{
+  initTodo= JSON.parse(localStorage.getItem("todos"));
+}
+
+
   const ondelete=(todo)=>{
     console.log("On delete activated",todo);
     settodos(todos.filter((e)=>{
       return e!==todo;
     }))
-    localStorage.getItem("todos");
+    localStorage.setItem("todos",JSON.stringify(todos));
     /* This will deleye item from storage once it is deleted from list\t*/
   }
 
@@ -38,7 +47,7 @@ else{
     console.log("sno is:",todos.sno);
   }
 
-  const [todos,settodos]= useState([]);
+  const [todos,settodos]= useState(initTodo);
 
   return (
     <>
