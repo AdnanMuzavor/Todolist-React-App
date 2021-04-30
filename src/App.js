@@ -32,7 +32,9 @@ else{
  
     settodos([...todos,myTodo]);
     console.log("mytodos:",myTodo);
- 
+    localStorage.setItem("todos",JSON.stringify(todos));
+    /* Adding newly added item in storage so that it getsw retained
+     */
     console.log("sno is:",todos.sno);
   }
 
