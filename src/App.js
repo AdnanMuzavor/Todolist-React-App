@@ -10,6 +10,7 @@ function App() {
     settodos(todos.filter((e)=>{
       return e!==todo;
     }))
+    
   }
 
 
@@ -34,25 +35,7 @@ else{
     console.log("sno is:",todos.sno);
   }
 
-  const [todos,settodos]= useState(
- [
-  { sno:1,
-    title:"Todo number one",
-    description:" Going to get todo number 1"
-
-  },
-  { sno:2,
-    title:"Todo number two",
-    description:" Going to get todo number 2"
-
-  },
-  { sno:3,
-    title:"Todo number three",
-    description:" Going to get todo number 3"
-
-  },
-
-]);
+  const [todos,settodos]= useState([]);
 
   return (
     <>
