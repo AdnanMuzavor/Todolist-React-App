@@ -10,7 +10,8 @@ function App() {
     settodos(todos.filter((e)=>{
       return e!==todo;
     }))
-    
+    localStorage.getItem("todos");
+    /* This will deleye item from storage once it is deleted from list\t*/
   }
 
 
