@@ -1,8 +1,14 @@
 import Header from "./Componenets/header";
 import Footer from "./Componenets/footer";
+import {About} from "./Componenets/About";
 import { Todos1 } from "./Componenets/Todos1";
 import React, { useState,useEffect } from "react";
 import { AddTodo } from "./Componenets/AddTodo";
+import { BrowserRouter as Router,Route,
+Switch,
+Link } from "react-router-dom";
+
+
 function App() {
   let initTodo;
   if (localStorage.getItem("todos") === null) {
@@ -52,14 +58,34 @@ function App() {
   
   return (
     <>
+    <Router>
       <Header />
       <hr></hr>
+      <Switch>
+  <Route exact path="/" render={()=>
+    {
+      return(
+<>
+<AddTodo addTodo={addTodo} />
 
-      <AddTodo addTodo={addTodo} />
+<h1 className="text-center">Todos List</h1>
 
-      <h1 className="text-center">Todos List</h1>
-      <Todos1 todos={todos} ondelete={ondelete} />
+<Todos1 todos={todos} ondelete={ondelete} />
+</>
+      )}}>
+
+   
+
+</Route>
+
+<Route path="/about">
+
+<About/>
+</Route>
+</Switch>
+     
       <Footer />
+      </Router>
     </>
   );
 }
