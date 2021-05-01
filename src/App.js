@@ -6,7 +6,7 @@ import React, { useState,useEffect } from "react";
 import { AddTodo } from "./Componenets/AddTodo";
 import { BrowserRouter as Router,Route,
 Switch,
-Link } from "react-router-dom";
+ } from "react-router-dom";
 
 
 function App() {
